@@ -1,0 +1,264 @@
+/* 共通・ダッシュボード画面 */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #4caf50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+/* ユーザー情報のスタイル */
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 10px; /* ヘッダーの下端からの位置を調整 */
+  right: 10px; /* ヘッダーの右端からの位置を調整 */
+}
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.user-name {
+  font-size: 16px;
+  color: white;
+}
+
+main {
+  display: flex; /* フレックスレイアウトを有効にする */
+  height: calc(100vh - 60px); /* ヘッダーとフッターの高さを引いた高さを設定 */
+}
+
+.sidebar {
+  background-color: #f4f4f4;
+  width: 250px;
+  padding: 15px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* サイドバーのコンテンツが溢れた場合にスクロール可能にする */
+}
+
+.content {
+  flex: 1; /* 残りのスペースを占める */
+  padding: 15px;
+  overflow-y: auto; /* コンテンツエリアが溢れた場合にスクロール可能にする */
+  position: relative;
+}
+
+.keyword-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.keyword-list li {
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease; /* ホバー時のアニメーション */
+  display: flex;
+  justify-content: space-between; /* 子要素を左右に分ける */
+  align-items: center; /* 縦方向に中央揃え */
+}
+
+/* ホバー時のスタイル */
+.keyword-list li:hover {
+  background-color: #f0f0f0; /* 軽い背景色を追加 */
+  transform: scale(1.02); /* 軽く拡大する */
+  cursor: pointer; /* ホバー時にカーソルをポインターに変更 */
+}
+
+.keyword-btn {
+  text-decoration: none; /* 下線を削除 */
+  color: inherit;
+}
+
+.delete-btn {
+  background-color: rgb(231, 115, 115); /* ボタンの背景色 */
+  color: #fff; /* ボタンの文字色 */
+  border: none; /* ボーダーなし */
+  padding: 5px 10px; /* ボタンの内側の余白 */
+  cursor: pointer; /* ポインタカーソルにする */
+  text-decoration: none; /* 下線なし */
+  font-size: 0.8rem;
+}
+
+h1,
+h2 {
+  font-weight: normal;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+}
+
+#recent-edits {
+  margin-bottom: 40px;
+}
+
+#stats {
+  display: flex;
+  justify-content: space-around;
+}
+
+#stats div {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* ログイン画面 */
+.main-login {
+  padding: 20px;
+  /* max-width: 800px; */
+  width: 100%;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-form span {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.login-form input[type="text"],
+input[type="password"],
+input[type="email"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.login-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 50%;
+  margin: auto;
+}
+
+.login-form button:hover {
+  background-color: #387e39;
+}
+
+/* キーワード登録画面 */
+#keyword-registration {
+  background-color: #fff;
+  padding: 100px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+#keyword-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+#keyword-form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#keyword-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#keyword-form button:hover {
+  background-color: #387e39;
+}
+
+#recent-edits #back-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  display: block;
+  margin: 20px auto;
+  width: 200px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  font-size: 0.8rem;
+}
+
+#recent-edits #back-button:hover {
+  background-color: #387e39;
+  transform: scale(1.05);
+}
+
+.hidden {
+  display: none !important; /* 確実に適用させるために !important を追加 */
+}

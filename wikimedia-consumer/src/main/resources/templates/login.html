@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"> 
+</head>
+
+<body>
+    <header>
+        <h1>Wikipedia 編集監視ダッシュボード ログイン</h1>
+    </header>
+    <main>
+        <dir class="main-login">
+
+            <form th:action="@{/login/to-login}" method="post" class="login-form">
+                <span>ユーザー名</span><input type="text" name="username" id="username">
+                <span>パスワード</span><input type="password" name="password" id="password"><br>
+
+                <button type="submit">ログイン</button>
+
+            </form>
+        </dir>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Wikipedia 編集監視アプリ</p>
+    </footer>
+</body>
+
+</html>
